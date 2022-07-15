@@ -1,0 +1,21 @@
+language: node
+node:  
+   - '2'
+
+services:
+   - docker
+before_install:
+   - docker-compose -f docker-compose-build.yaml build --parallel
+
+script: 
+   - docker-compose up
+
+after_success: 
+   - echo '$DOCKER_PSSWORD' docker login -u "$DOCKER_USERNME" --password-stdn
+   - docker push 22grace/udagram-api-user
+   - docker push 22grace/udagram-api-feed
+   - docker push 22grace/reverseproxy
+   - docker push 22grace/udagram-frontend      
+
+
+
