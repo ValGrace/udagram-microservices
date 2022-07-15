@@ -1,6 +1,6 @@
 language: node
 node:  
-   - '2'
+   - '12'
 
 services:
    - docker
