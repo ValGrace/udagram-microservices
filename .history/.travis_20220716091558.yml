@@ -15,7 +15,7 @@ script:
    - docker tag reverseproxy 22grace/reverseproxy:v1
 
 after_success: 
-   - docker login --username 22grace --password-stdn
+   - echo '$DOCKER_PASSWORD' | docker login -u "$DOCKER_USERNAME" --password-stdn
    - docker push 22grace/udagram-api-user
    - docker push 22grace/udagram-api-feed
    - docker push 22grace/reverseproxy
