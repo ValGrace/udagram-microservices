@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-configmap
+  namespace: default
+data:
+  POSTGRES_HOST: project3-97556.cf6az3cvvmo4.us-east-1.rds.amazonaws.com
+  POSTGRES_DB: project397556
+  AWS_BUCKET: project3-975560-bucket
+  AWS_REGION: us-east-1
+  AWS_PROFILE: microproject
+  JWT_SECRET: JWT_SECRET
+  URL: http://localhost:8100  
