@@ -1,0 +1,28 @@
+language: node
+node:  
+   - '12'
+
+services:
+   - docker
+before_install:
+    
+   - docker-compose -f docker-compose-build.yaml build --parallel
+
+script: 
+   
+   - docker tag udagram-api-feed 22grace/udagram-api-feed:v1
+   - docker tag udagram-api-user 22grace/udagram-api-user:v1
+   - docker tag reverseproxy 22grace/reverseproxy:v1
+   - docker tag udagram-frontend:local 22grace/udagram-frontend:v2
+   
+after_success: 
+   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+   - docker push 22grace/udagram-api-user:v1
+   - docker push 22grace/udagram-api-feed:v1
+   - docker push 22grace/reverseproxy:v1
+   - docker push 22grace/udagram-frontend:local
+   - docker push 22grace/udagram-frontend:v2
+       
+
+
+
