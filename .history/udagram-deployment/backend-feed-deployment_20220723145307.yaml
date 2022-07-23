@@ -1,24 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverseproxy-deployment
+  name: backend-feed-deployment
 spec:
   selector:
     matchLabels:
-      app: reverseproxy
+      app: udagram-api-feed
   template:
     metadata:
       labels:
-        app: reverseproxy
+        app: udagram-api-feed
     spec:
       containers:
-      - name: reverseproxy
-        image: 22grace/reverseproxy:v1
+      - name: udagram-api-feed
+        image: docker.io/22grace/udagram-api-feed:v1
         resources:
           limits:
             memory: "128Mi"
-            cpu: 1000m
-          requests:
-            cpu: 500m  
+            cpu: "500m"
         ports:
         - containerPort: 80

@@ -4,8 +4,6 @@ metadata:
   name: env-configmap
   namespace: default
 data:
-  POSTGRES_USERNAME: postgres
-  POSTGRES_PASSWORD: microproject322
   POSTGRES_HOST: proj3-db.cesbaijnry8m.us-east-1.rds.amazonaws.com
   POSTGRES_DB: postgres
   AWS_BUCKET: micros-bucket-proj322
