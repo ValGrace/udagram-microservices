@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-feed-deployment
+  name: backend-user-deployment
 spec:
   selector:
     matchLabels:
-      app: udagram-api-feed
+      app: udagram-api-user
   replicas: 2    
   template:
     metadata:
       labels:
-        app: udagram-api-feed
+        app: udagram-api-user
     spec:
       containers:
-      - name: udagram-api-feed
-        image: 22grace/udagram-api-feed:v2
+      - name: udagram-api-user
+        image: 22grace/udagram-api-user:v1
         resources:
           limits:
             memory: "200Mi"
             cpu: "500m"
-          requests: 
+          requests:
             memory: "100Mi"  
         ports:
         - containerPort: 80

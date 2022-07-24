@@ -6,7 +6,6 @@ spec:
   selector:
     matchLabels:
       app: reverseproxy
-  replicas: 2    
   template:
     metadata:
       labels:
@@ -14,13 +13,12 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: 22grace/reverseproxy:v1
+        image: 22grace/reverseproxy:v2
         resources:
           limits:
-            memory: "200Mi"
+            memory: "128Mi"
             cpu: 1000m
           requests:
-            memory: "100"
             cpu: 500m  
         ports:
         - containerPort: 80
