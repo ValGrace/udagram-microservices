@@ -1,24 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-user
+  name: backend-user-deployment
 spec:
   selector:
     matchLabels:
-      run: backend-user
+      app: udagram-api-user
   replicas: 2    
   template:
     metadata:
       labels:
-        run: backend-user
+        app: udagram-api-user
     spec:
       containers:
-      - name: backend-user
+      - name: udagram-api-user
         image: 22grace/udagram-api-user:v2
         resources:
           limits:
-            cpu: 1000m
+            memory: 600Mi
+            cpu: 500m
           requests:
-            cpu: 500m 
+            memory: 300Mi
+            cpu: 200m 
         ports:
         - containerPort: 80

@@ -12,14 +12,14 @@ script:
    
    - docker tag udagram-api-feed 22grace/udagram-api-feed:v2
    - docker tag udagram-api-user 22grace/udagram-api-user:v2
-   - docker tag reverseproxy 22grace/reverseproxy:v2
+   - docker tag reverseproxy 22grace/reverseproxy:v3
    - docker tag udagram-frontend:local 22grace/udagram-frontend:v4
    
 after_success: 
    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
    - docker push 22grace/udagram-api-user:v2
    - docker push 22grace/udagram-api-feed:v2
-   - docker push 22grace/reverseproxy:v2
+   - docker push 22grace/reverseproxy:v3
    - docker push 22grace/udagram-frontend:local
    - docker push 22grace/udagram-frontend:v4
  

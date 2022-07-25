@@ -6,6 +6,7 @@ metadata:
     service: backend-feed
 spec:
   selector:
+    app: backend-feed
     service: backend-feed
   ports:
   - port: 8080

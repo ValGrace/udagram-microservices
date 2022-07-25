@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: backend-user
+      app: backend-user
   replicas: 2    
   template:
     metadata:
       labels:
-        run: backend-user
+        app: backend-user
     spec:
       containers:
       - name: backend-user
