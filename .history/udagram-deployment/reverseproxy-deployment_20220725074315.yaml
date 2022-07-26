@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-user
+  name: reverseproxy-deployment
 spec:
   selector:
     matchLabels:
-      run: backend-user
+      app: reverseproxy
   replicas: 2    
   template:
     metadata:
       labels:
-        run: backend-user
+        app: reverseproxy
     spec:
       containers:
-      - name: backend-user
-        image: 22grace/udagram-api-user:v2
+      - name: reverseproxy
+        image: 22grace/reverseproxy:v1
         resources:
           limits:
-            memory: 900Mi
-            cpu: 500m
+            cpu: 1000m 
+            memory: 600Mi
           requests:
-            memory: 300Mi
-            cpu: 200m 
+            memory: 200Mi
+            cpu: 500m 
         ports:
         - containerPort: 80
