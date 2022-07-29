@@ -17,10 +17,10 @@ spec:
         image: 22grace/udagram-api-user:v2
         resources:
           limits:
-            memory: 1200Mi
+            memory: 900Mi
             cpu: 1000m
           requests:
-            memory: 100Mi
+            memory: 300Mi
             cpu: 500m 
         ports:
         - containerPort: 80
