@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-      image: 22grace/reverseproxy:v2
+      image: 22grace/reverseproxy:v1
       ports:
           - 8080:8080
       restart: always

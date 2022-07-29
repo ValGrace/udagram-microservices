@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverseproxy-deployment
+spec:
+  selector:
+    matchLabels:
+     run: reverseproxy
+  replicas: 2    
+  template:
+    metadata:
+      labels:
+        run: reverseproxy
+    spec:
+      containers:
+      - name: reverseproxy
+        image: 22grace/reverseproxy:v4
+        resources:
+          limits:
+            cpu: 1000m 
+            memory: 600Mi
+          requests:
+            memory: 300Mi
+            cpu: 500m 
+        ports:
+        - containerPort: 80

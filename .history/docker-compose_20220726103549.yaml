@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-      image: 22grace/reverseproxy:v2
+      image: 22grace/reverseproxy:v4
       ports:
           - 8080:8080
       restart: always
@@ -35,6 +35,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   frontend:
-    image: 22grace/udagram-frontend:v2
+    image: 22grace/udagram-frontend:local
     ports:
       - "8100:80"
