@@ -20,7 +20,7 @@ spec:
             memory: 900Mi
             cpu: 500m
           requests: 
-            memory: 300Mi 
+            memory: 400Mi 
             cpu: 200m  
         ports:
         - containerPort: 80

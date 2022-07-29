@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: 22grace/reverseproxy:v4
+        image: 22grace/reverseproxy:v2
         resources:
           limits:
             cpu: 1000m 
-            memory: 600Mi
+            memory: 900Mi
           requests:
-            memory: 200Mi
+            memory: 400Mi
             cpu: 500m 
         ports:
         - containerPort: 80
