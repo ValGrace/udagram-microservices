@@ -17,7 +17,7 @@ spec:
         image: 22grace/reverseproxy:v6
         resources:
           limits:
-            cpu: 800m 
+            cpu: 1000m 
             memory: 900Mi
           requests:
             memory: 300Mi
