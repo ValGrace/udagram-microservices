@@ -5,8 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      run: backend-feed
-  replicas: 2    
+      run: backend-feed 
   template:
     metadata:
       labels:
