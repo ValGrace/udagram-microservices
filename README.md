@@ -12,6 +12,9 @@ To help review your infrastructure, please include the following screenshots in 
 ![travis ci build](https://github.com/ValGrace/udagram-microservices/blob/main/screenshots/images/yfvkvjh.PNG)
 
 ## Kubernetes
+An AWS Elastic Kubernetes Service Cluster is created using eksctl and kubectl tools having granted the required iam permissions.
+Managed node groups are also spinned up inside the cluster which will allow for the automatic creation of ec2 instances that provisions compute capacity for our application.
+
 * To verify Kubernetes pods are deployed properly
 ```bash
 kubectl get pods
@@ -38,4 +41,5 @@ kubectl describe hpa
 kubectl logs {pod_name}
 ```
 ![user logs](https://github.com/ValGrace/udagram-microservices/blob/main/screenshots/images/user-logs.PNG)
+
 
